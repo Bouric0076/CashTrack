@@ -1,0 +1,50 @@
+﻿@page
+@model CashTrack.Pages.Transactions.IndexModel
+@{
+    ViewData["Title"] = "Transactions";
+}
+
+<h2>Transactions</h2>
+
+<p>
+    <a class="btn btn-primary" id="create" asp-page="Create">
+        <i class="fas fa-plus"></i> Add New Transaction
+    </a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Description</th>
+            <th>Amount</th>
+            <th>Type</th>
+            <th>Payment Method</th>
+            <th>Date</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Transactions)
+        {
+            <tr>
+                <td>@item.Description</td>
+                <td>@item.Amount.ToString("C")</td>
+                <td>@item.Type</td>
+                <td>@item.PaymentMethod</td>
+                <td>@item.Date.ToShortDateString()</td>
+                <td>
+                    <a class="btn btn-info btn-sm" asp-page="Details" asp-route-id="@item.Id">
+                        <i class="fas fa-info-circle"></i> Details
+                    </a>
+                    <a class="btn btn-warning btn-sm" asp-page="Edit" asp-route-id="@item.Id">
+                        <i class="fas fa-edit"></i> Edit
+                    </a>
+                    <a class="btn btn-danger btn-sm" asp-page="Delete" asp-route-id="@item.Id">
+                        <i class="fas fa-trash-alt"></i> Delete
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

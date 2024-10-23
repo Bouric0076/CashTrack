@@ -1,0 +1,58 @@
+﻿@page
+@model CashTrack.Pages.Transactions.CreateModel
+
+@{
+    ViewData["Title"] = "Create Transaction";
+}
+
+<h1>Create Transaction</h1>
+
+<div class="row">
+    <div class="col-md-6">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Transaction.Description" class="control-label"></label>
+                <input asp-for="Transaction.Description" class="form-control" required />
+                <span asp-validation-for="Transaction.Description" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Transaction.Amount" class="control-label"></label>
+                <input asp-for="Transaction.Amount" class="form-control" type="number" step="0.01" required />
+                <span asp-validation-for="Transaction.Amount" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Transaction.Type" class="control-label"></label>
+                <select asp-for="Transaction.Type" class="form-control" asp-items="Model.TypeOptions" required></select>
+                <span asp-validation-for="Transaction.Type" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Transaction.Date" class="control-label"></label>
+                <input asp-for="Transaction.Date" class="form-control" type="date" required />
+                <span asp-validation-for="Transaction.Date" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Transaction.PaymentMethod" class="control-label"></label>
+                <input asp-for="Transaction.PaymentMethod" class="form-control" required />
+                <span asp-validation-for="Transaction.PaymentMethod" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Create</button>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,576 @@
+/* General Styles */
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9fafb;
+    color: #333;
+}
+
+/* Main Content Area */
+.main-content {
+    flex: 1 0 auto;
+    padding-top: 80px; /* Adjust based on navbar's height */
+    padding-bottom: 20px; /* Spacing before footer */
+}
+
+/* Container Styles */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+    .navbar .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 0;
+    }
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+    .nav-links a {
+        text-decoration: none;
+        color: #333;
+        font-weight: 500;
+        transition: color 0.3s;
+    }
+
+        .nav-links a:hover {
+            color: #4CAF50;
+        }
+
+.btn-login,
+.btn-register {
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-login {
+    background-color: transparent;
+    border: 2px solid #4CAF50;
+    color: #4CAF50;
+}
+
+    .btn-login:hover {
+        background-color: #4CAF50;
+        color: #fff;
+    }
+
+.btn-register {
+    background-color: #4CAF50;
+    border: none;
+    color: #fff;
+}
+
+    .btn-register:hover {
+        background-color: #45a049;
+    }
+
+/* Hero Section Styles */
+.hero {
+    background: linear-gradient(135deg, #4CAF50 0%, #2e8b57 100%);
+    color: #fff;
+    padding: 100px 0 60px 0;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.hero-text {
+    flex: 1 1 500px;
+    padding-right: 20px;
+}
+
+    .hero-text h1 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+    }
+
+    .hero-text p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        line-height: 1.6;
+    }
+
+.cta-button {
+    background-color: #fff;
+    color: #4CAF50;
+    padding: 0.75rem 2rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+    .cta-button:hover {
+        background-color: #4CAF50;
+        color: #fff;
+    }
+
+.hero-image {
+    flex: 1 1 400px;
+    text-align: center;
+}
+
+    .hero-image img {
+        max-width: 100%;
+        height: auto;
+    }
+
+/* Features Section Styles */
+.features {
+    padding: 60px 0;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+    .features h2 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+    }
+
+    .features p {
+        font-size: 1.1rem;
+        color: #666;
+        margin-bottom: 40px;
+    }
+
+.feature-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.feature-item {
+    background-color: #f1f5f9;
+    padding: 30px;
+    border-radius: 10px;
+    flex: 1 1 250px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+    .feature-item:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .feature-item img {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 20px;
+    }
+
+    .feature-item h3 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+        color: #4CAF50;
+    }
+
+    .feature-item p {
+        font-size: 1rem;
+        color: #555;
+    }
+
+/* Benefits Section Styles */
+.benefits {
+    padding: 60px 0;
+    background-color: #f9fafb;
+    text-align: center;
+}
+
+    .benefits h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+
+.benefits-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.benefit-item {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    flex: 1 1 250px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+    .benefit-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .benefit-item i {
+        color: #4CAF50;
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+
+    .benefit-item h3 {
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+    }
+
+    .benefit-item p {
+        font-size: 1rem;
+        color: #555;
+    }
+
+/* Testimonials Section Styles */
+.testimonials {
+    padding: 60px 0;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+    .testimonials h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+
+.testimonial-slider {
+    display: flex;
+    overflow-x: auto;
+    gap: 2rem;
+    padding: 20px 0;
+}
+
+.testimonial-item {
+    background-color: #f1f5f9;
+    padding: 30px;
+    border-radius: 10px;
+    min-width: 250px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+    .testimonial-item p {
+        font-size: 1rem;
+        color: #555;
+        margin-bottom: 15px;
+    }
+
+    .testimonial-item h4 {
+        font-size: 1.1rem;
+        color: #4CAF50;
+    }
+
+/* Pricing Section Styles */
+.pricing {
+    padding: 60px 0;
+    background-color: #f9fafb;
+    text-align: center;
+}
+
+    .pricing h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+
+.pricing-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.pricing-card {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    flex: 1 1 250px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+    .pricing-card.popular {
+        border: 2px solid #4CAF50;
+    }
+
+    .pricing-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .pricing-card h3 {
+        font-size: 1.5rem;
+        color: #4CAF50;
+        margin-bottom: 10px;
+    }
+
+    .pricing-card .price {
+        font-size: 2rem;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    .pricing-card ul {
+        list-style: none;
+        padding: 0;
+        margin-bottom: 20px;
+    }
+
+        .pricing-card ul li {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+    .pricing-card .cta-button {
+        background-color: #4CAF50;
+        color: #fff;
+        padding: 0.75rem 1.5rem;
+        border-radius: 25px;
+        text-decoration: none;
+        font-size: 1rem;
+        transition: background-color 0.3s;
+    }
+
+        .pricing-card .cta-button:hover {
+            background-color: #45a049;
+        }
+
+/* Call to Action Section Styles */
+.cta {
+    padding: 60px 0;
+    background-color: #4CAF50;
+    color: #fff;
+    text-align: center;
+}
+
+    .cta h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .cta .cta-button {
+        background-color: #fff;
+        color: #4CAF50;
+        padding: 0.75rem 2rem;
+        border-radius: 30px;
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: bold;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+        .cta .cta-button:hover {
+            background-color: #f1f5f9;
+            color: #2e8b57;
+        }
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 30px 0;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 10px;
+}
+
+    .footer-links a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s;
+    }
+
+        .footer-links a:hover {
+            color: #4CAF50;
+        }
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+    .social-icons a {
+        color: #fff;
+        font-size: 1.2rem;
+        transition: color 0.3s;
+    }
+
+        .social-icons a:hover {
+            color: #4CAF50;
+        }
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .hero-text {
+        padding-right: 0;
+        margin-top: 20px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+        .nav-links li {
+            margin: 0.5rem 0;
+        }
+
+    .feature-grid,
+    .benefits-grid,
+    .pricing-grid {
+        flex-direction: column;
+    }
+}
+
+/* Login Page Styles */
+
+/* Adjusted Login Page Wrapper */
+.login-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f9fa;
+    padding-top: 100px; /* Additional padding if needed */
+    padding-bottom: 20px; /* Ensure footer isn't overlapped */
+}
+
+/* Consolidated Card Styles */
+.card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+/* Specific Login Button */
+.btn-login-submit {
+    background-color: #4CAF50;
+    border-color: #4CAF50;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+    .btn-login-submit:hover {
+        background-color: #45a049;
+        border-color: #45a049;
+    }
+
+.btn-outline-primary {
+    color: #4CAF50;
+    border-color: #4CAF50;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+    .btn-outline-primary:hover {
+        background-color: #4CAF50;
+        color: #fff;
+        border-color: #4CAF50;
+    }
+
+.text-center a {
+    color: #4CAF50;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+    .text-center a:hover {
+        color: #2e8b57;
+    }
+
+/* Responsive Adjustments */
+@media (max-width: 576px) {
+    .login-wrapper {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .card-body {
+        padding: 1.5rem;
+    }
+
+    .btn {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+    }
+}
+
+/* Dashboard Headings Styles */
+.dashboard-heading {
+    font-size: 2.5rem;
+    color: #333; /* Ensure this contrasts with the background */
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+    .dashboard-heading + .row {
+        margin-top: 50px;
+    }
+
+#create{
+    padding-top: 40px;
+}

@@ -1,0 +1,70 @@
+﻿@page
+@model CashTrack.Pages.DashboardModel
+
+@{
+    ViewData["Title"] = "Dashboard | CashTrack";
+}
+
+<h2 class="dashboard-heading">Dashboard</h2>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="card text-white bg-success mb-3">
+            <div class="card-header">Total Income</div>
+            <div class="card-body">
+                <h5 class="card-title">@Model.TotalIncome.ToString("C")</h5>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-white bg-danger mb-3">
+            <div class="card-header">Total Expenses</div>
+            <div class="card-body">
+                <h5 class="card-title">@Model.TotalExpenses.ToString("C")</h5>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-white bg-info mb-3">
+            <div class="card-header">Balance</div>
+            <div class="card-body">
+                <h5 class="card-title">@Model.Balance.ToString("C")</h5>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h3 class="mt-5">Recent Transactions</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Description</th>
+            <th>Amount</th>
+            <th>Type</th>
+            <th>Payment Method</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var transaction in Model.RecentTransactions)
+        {
+            <tr>
+                <td>@transaction.Description</td>
+                <td>@transaction.Amount.ToString("C")</td>
+                <td>@transaction.Type</td>
+                <td>@transaction.PaymentMethod</td>
+                <td>@transaction.Date.ToShortDateString()</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<p>
+    <a class="btn btn-primary" asp-page="/Transactions/Create">
+        <i class="fas fa-plus"></i> Add New Transaction
+    </a>
+    <a class="btn btn-secondary" asp-page="/Transactions/Index">
+        <i class="fas fa-list"></i> View All Transactions
+    </a>
+</p>
+
